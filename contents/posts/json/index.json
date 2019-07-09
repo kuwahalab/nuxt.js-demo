@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "タイトル",
+    "category": "カテゴリ",
+    "tags": ["タグ1", "タグ2"],
+    "content": "本文",
+    "createdAt": "2019-07-07",
+    "publishedDate": "2019-07-08",
+    "slug": "test1"
+  },
+  {
+    "id": 2,
+    "title": "タイトル2",
+    "category": "カテゴリ2",
+    "tags": ["タグ1", "タグ2", "タグ3"],
+    "content": "本文2",
+    "createdAt": "2019-07-08",
+    "publishedDate": "2019-09-08",
+    "slug": "test2"
+  }
+]
