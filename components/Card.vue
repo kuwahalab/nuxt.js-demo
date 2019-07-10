@@ -1,6 +1,7 @@
 <template>
   <article class="card">
     <nuxt-link class="post-link" :to="{ name: 'posts-slug', params: { slug: slug } }">
+    <!-- <nuxt-link :to="{ name: 'posts', params: { slug: slug } }"> -->
       <h2 class="title">
         {{ title }}
       </h2>
