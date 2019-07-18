@@ -1,4 +1,4 @@
-const baseRoute = env => (env === 'GH_PAGES' ? '/nuxt-circle-ci/' : '/')
+const baseRoute = env => (env === 'GH_PAGES' ? '/nuxt.js-demo/' : '/')
 
 module.exports = {
   mode: 'universal',
