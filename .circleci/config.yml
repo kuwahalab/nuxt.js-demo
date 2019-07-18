@@ -1,10 +1,52 @@
 version: 2
 jobs:
-  build:
+  generate:
     docker:
       - image: circleci/node:10.16.0
 
+    working_directory: ~/nuxt.js-demo
+
     steps:
       - checkout
+      - restore_cache:
+          name: Restore yarn package cache
+          keys:
+            - v1-yarn-packages-{{ checksum "yarn.lock" }}
+      - run: yarn install --frozen-lockfile
+      - save_cache:
+          name: Save yarn package cache
+          paths:
+            - ~/.cache/yarn
+          key:
+            v1-yarn-packages-{{ checksum "yarn.lock" }}
+      - run: yarn run lint
+      - run: yarn run generate
 
-      - run: echo "hello world!"
+  deploy:
+    docker:
+      - image: circleci/node:10.16.0
+
+    working_directory: ~/nuxt.js-demo
+
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore yarn package cache
+          keys:
+            - v1-yarn-packages-{{ checksum "yarn.lock" }}
+      - run: yarn install
+      - run: git config user.name $GITHUB_NAME
+      - run: git config user.email $GITHUB_EMAIL
+      - run: yarn generate:gh-pages
+      - run: yarn deploy:gh-pages
+workflows:
+  version: 2
+  generate-deploy:
+    jobs:
+      - generate
+      - deploy
+          requires:
+            - generate
+          filters:
+            branches:
+              only: master
