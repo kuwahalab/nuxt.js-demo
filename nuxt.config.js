@@ -1,4 +1,4 @@
-var baseRoute = env => (env === 'GH_PAGES' ? '/nuxt-circle-ci/' : '/')
+const baseRoute = env => (env === 'GH_PAGES' ? '/nuxt-circle-ci/' : '/')
 
 module.exports = {
   mode: 'universal',
@@ -13,7 +13,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', href: baseRoute(process.env.DEPLOY_ENV) + 'favicon.ico'}
+      { rel: 'icon', type: 'image/x-icon', href: baseRoute(process.env.DEPLOY_ENV) + 'favicon.ico' }
     ]
   },
   router: {
