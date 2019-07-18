@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  generate:
+  build:
     docker:
       - image: circleci/node:10.16.0
 
@@ -43,7 +43,7 @@ workflows:
   version: 2
   generate-deploy:
     jobs:
-      - generate
+      - build
       - deploy:
           requires:
             - generate
