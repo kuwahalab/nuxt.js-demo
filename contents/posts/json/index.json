@@ -18,5 +18,15 @@
     "createdAt": "2019-07-08",
     "publishedDate": "2019-09-08",
     "slug": "test2"
+  },
+  {
+    "id": 3,
+    "title": "タイトル3",
+    "category": "カテゴリ3",
+    "tags": ["タグ1", "タグ2", "タグ3"],
+    "content": "本文3",
+    "createdAt": "2019-07-08",
+    "publishedDate": "2019-09-08",
+    "slug": "test3"
   }
 ]
