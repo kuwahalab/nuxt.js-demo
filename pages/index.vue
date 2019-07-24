@@ -1,24 +1,16 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title">
-        Demo
-      </h1>
-      <h2 class="subtitle" />
-      <h3>新着記事一覧</h3>
+      <h3>新着</h3>
+      <card-list
+        class="contents"
+        :posts="new_posts"
+      />
+      <h3>一覧</h3>
       <card-list
         class="contents"
         :posts="posts"
       />
-      <div class="links">
-        <a
-          href="https://google.com"
-          target="_blank"
-          class="button--green"
-        >
-          Google
-        </a>
-      </div>
     </div>
   </div>
 </template>
@@ -36,8 +28,15 @@ export default {
     return {
       posts: posts
     }
+  },
+  computed: {
+    new_posts() {
+      return this.posts.filter((item, index) => {
+        // ここの新着条件は後に決める。
+        if (item.publishedDate === '2019-07-24') return true
+      })
+    }
   }
-
 }
 </script>
 

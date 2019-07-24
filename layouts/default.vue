@@ -1,7 +1,15 @@
 <template>
-  <div>
+  <v-app>
+    <v-toolbar color="blue">
+      <v-toolbar-title class="white--text" to="/">
+        Demo
+      </v-toolbar-title>
+    </v-toolbar>
     <nuxt />
-  </div>
+    <v-footer color="blue" app>
+      <span class="white--text">&copy; kuwahaLab</span>
+    </v-footer>
+  </v-app>
 </template>
 
 <style>
@@ -51,5 +59,9 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.v-toolbar {
+  flex: none;
 }
 </style>

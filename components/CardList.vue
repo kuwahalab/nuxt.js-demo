@@ -5,6 +5,7 @@
       :key="post.id"
       class="card"
       :title="post.title"
+      :fv="post.fv"
       :category="post.category"
       :tags="post.tags"
       :created-at="post.createdAt"

@@ -1,6 +1,10 @@
 <template>
   <div>
-    {{ post }}
+    <h1>{{ post[0]["title"] }}</h1>
+    <div class="fv">
+      <img :src="post[0]['fv']" width="100%">
+    </div>
+    <div class="content" v-html="post[0]['content']" />
   </div>
 </template>
 
