@@ -6,6 +6,9 @@
         {{ title }}
       </h2>
     </nuxt-link>
+     <div class="fv">
+      <img :src="fv" width="100%">
+    </div>
     <div class="tags">
       <span v-for="(tag, i) in tags" :key="i" class="tag">{{ tag }}</span>
     </div>
@@ -16,6 +19,10 @@
 export default {
   props: {
     title: {
+      type: String,
+      required: true
+    },
+    fv: {
       type: String,
       required: true
     },
