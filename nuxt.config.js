@@ -17,7 +17,14 @@ module.exports = {
     ]
   },
   router: {
-    base: baseRoute(process.env.DEPLOY_ENV)
+    base: baseRoute(process.env.DEPLOY_ENV),
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/errors/404.vue')
+      })
+    }
   },
   /*
   ** Customize the progress-bar color
